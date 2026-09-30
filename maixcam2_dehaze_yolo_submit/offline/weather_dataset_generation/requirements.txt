@@ -1,0 +1,9 @@
+torch>=2.4
+torchvision>=0.19
+opencv-python>=4.8
+numpy>=1.26
+Pillow>=10.0
+diffusers>=0.30
+transformers>=4.44
+accelerate>=0.34
+safetensors>=0.4

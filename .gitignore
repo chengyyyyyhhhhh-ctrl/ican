@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+
+# Editors / temporary files
+.vscode/
+.idea/
+~$*
+*.tmp
+
+# Vivado generated files
+.Xil/
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.jou
+*.log
+*.str
+*.bit
+*.dcp
+*.ltx
+
+# Local data and output
+datasets/
+data/
+outputs/
+runs/

@@ -1,0 +1,36 @@
+project: extreme_weather_chinese_plate
+
+weather_classes: [fog, rain, snow, sand]
+
+pc_detector:
+  model: models/license_plate_yolov8.onnx
+  input_size: [640, 640]
+  confidence: 0.45
+  iou: 0.45
+
+maixcam2_detector:
+  model: models/maixhub_plate_1229/model_249078.mud
+  network: yolov5s
+  input_size: [224, 224]
+  label: license_plate
+
+recognizer:
+  pc_model: models/lprnet_chinese_plate.onnx
+  input_size: [94, 24]
+  charset_size: 68
+  maixcam2_model: /root/models/pp_ocr.mud
+
+dehaze:
+  mode: auto
+  method: fast_dark_channel_prior
+  auto_threshold: 0.52
+  estimate_scale: 0.35
+  omega: 0.90
+  minimum_transmission: 0.18
+
+generation:
+  primary: diffusion_controlnet
+  fallback: cyclegan
+  protect_plate_region: true
+  preserve_yolo_labels: true
+  metadata: generation_metadata.csv
